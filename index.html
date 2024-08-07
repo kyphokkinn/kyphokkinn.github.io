@@ -51,7 +51,14 @@
 	<!--[if lt IE 9]>
 	<script src="respond.min.js"></script>
 	<![endif]-->
-
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+        Telegram.WebApp.onEvent('DOMContentLoaded', function() {
+            // Web App is ready
+            let user = Telegram.WebApp.initDataUnsafe.user;
+            document.body.innerHTML += `<p>Welcome, ${user.first_name}!</p>`;
+        });
+    </script>
 </head>
 
 <body>
